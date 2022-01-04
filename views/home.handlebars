@@ -1,0 +1,11 @@
+<main id="main">
+    <div class="min-vh-100">
+        <div class="d-flex flex-column align-items-center" >
+            {{#if posts}}
+            {{#each posts }}
+            {{> post-details}}
+            {{/each}}
+            {{/if}}
+        </div>
+    </div>
+</main>
