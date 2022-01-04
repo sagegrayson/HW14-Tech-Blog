@@ -8,12 +8,12 @@ const routes = require("./controllers");
 // ^14.28
 
 const sequelize = require("./config/connection");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const SequelizeStore = require("connect-session-sequelize")(exsession.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const session = {
+const sess = {
 	secret: "secretsauce",
 	cookie: {},
 	resave: false,
@@ -23,7 +23,7 @@ const session = {
 	}),
 };
 
-app.use(exsession(session));
+app.use(exsession(sess));
 
 const hbs = exhandle.create({ defaultLayout: "main" });
 
